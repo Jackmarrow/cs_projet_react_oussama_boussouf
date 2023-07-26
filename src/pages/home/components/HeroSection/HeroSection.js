@@ -1,7 +1,4 @@
 import './HeroSection.scss';
-import shirtCollection from '../../../assets/images/shirt-collection.jpg';
-import jeansCollection from '../../../assets/images/jeans-collection.jpg';
-import modal from '../../../assets/images/master-slide.jpg';
 
 
 export const HeroSection = () => {

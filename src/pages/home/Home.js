@@ -4,8 +4,8 @@ import './Home.scss';
 
 
 
-import {HeroSection} from './components/HeroSection';
-import { ComingProduct } from "../../layouts/ComingProduct";
+import {HeroSection} from './components/HeroSection/HeroSection';
+import { ComingProduct } from "./components/ComingProduct/ComingProduct";
 
 export const Home = () => {
   return (

@@ -1,0 +1,22 @@
+@import '../../../../styles/variables';
+
+.coming-product{
+
+    .product-image{
+        @media (max-width: 768px){
+            width: 100%;
+        }
+
+        max-width: 300px;
+        height: 300px;
+        object-fit: cover;
+    }
+
+    button{
+        width: max-content;
+        &:hover{
+            background-color: $light-orange;
+            color: white;
+        }
+    }
+}
