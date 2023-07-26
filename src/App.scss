@@ -1,0 +1,13 @@
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+@import './styles/fonts';
+
+
+*{
+    padding: 0 !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+}
+
+body{
+    font-family: 'Montserrat';
+}
