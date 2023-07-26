@@ -1,0 +1,17 @@
+.hero-section{
+    background-image: url('../../../assets/images/shirt-collection.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 70vh;
+
+    h1{
+        font-size: 3rem;
+        border-bottom: 5px solid white;
+    }
+
+    button{
+        font-size: .9rem;
+    }
+}

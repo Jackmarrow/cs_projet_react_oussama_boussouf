@@ -8,7 +8,7 @@ export const Navigation = () => {
     return (
         <nav className="nav-bar px-2 pb-1">
             <img src={logo} alt="logo" />
-            <ul>
+            <ul className="d-none d-md-block">
             <NavLink className="mx-1"  to={"/"}>Home</NavLink>
             <NavLink className="mx-1"  to={"/product"}>Product</NavLink>
             <NavLink className="mx-1"  to={"/about"}>About</NavLink>
