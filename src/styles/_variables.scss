@@ -1,6 +1,15 @@
 @import "../../node_modules/bootstrap/scss/functions";
 @import "../../node_modules/bootstrap/scss/variables";
 
+$light-green: #66a8a6;
+$light-gray: #a6a7a6;
+$light-orange: #e65540;
+
+$custom-colors: (
+  "light-green": $light-green,
+  "light-gray": $light-gray,
+  "light-orange": $light-orange
+);
 
 $theme-colors: map-merge($theme-colors, $custom-colors);
 
