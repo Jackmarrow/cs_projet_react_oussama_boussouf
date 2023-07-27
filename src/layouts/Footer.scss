@@ -1,0 +1,21 @@
+.footer-section{
+    .wrapper{
+        width: 80vw;
+        max-width: 1300px;
+        .get-in-touch{
+            flex-basis: 30%;
+            p{
+                font-size: .9rem;
+            }
+            
+        }
+        .links {
+            font-size: .9rem;
+            flex-basis: 30%;
+        }
+    }
+
+    p{
+        font-size: .9rem;
+    }
+}

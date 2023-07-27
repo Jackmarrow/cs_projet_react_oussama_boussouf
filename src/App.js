@@ -6,6 +6,7 @@ import { About } from "./pages/about/About";
 import { Navigation } from "./layouts/Navigation";
 import { Product } from "./pages/product/Product";
 import { Contact } from "./pages/contact/Contact";
+import { Footer } from "./layouts/Footer";
 import '../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js'
 import './App.scss';
 // IMPORT IMAGES
@@ -20,6 +21,11 @@ import brownWatch from './assets/images/brown-watch.jpg';
 import whiteShirt from './assets/images/white-shirt.jpg';
 import womenJean from './assets/images/women-jean.jpg';
 import softPant from './assets/images/male-pant.jpg';
+import pinkPant from './assets/images/pink-pant.jpg';
+import shirtBack from './assets/images/bg-shirt.jpg';
+import jeanJacket from './assets/images/jean-jacket.jpg';
+import blueJeanPant from './assets/images/blue-jean.jpg';
+
 
 export const Context = createContext();
 
@@ -47,6 +53,10 @@ export const App = () => {
   const white_shirt = new Item('Soft White Shirt', '23', whiteShirt, 'men', 'New');
   const women_jean = new Item('Jean Pant', '23', womenJean, 'women', 'Old');
   const soft_pant = new Item('Soft Pant', '23', softPant, 'men', 'Sale');
+  const pink_pant = new Item('Soft Pink Pant', '23', pinkPant, 'women', 'Best Seller');
+  const shirt_back = new Item('Soft White Shirt', '23', shirtBack, 'men', 'Best Seller');
+  const jean_jacket = new Item('Jean Jacket', '23', jeanJacket, 'men', 'Best Seller');
+  const blue_pant = new Item('Blue Jean', '23', blueJeanPant, 'women', 'Best Seller');
 
   const [tabProduct, setTabProduct] = useState([
     glass,
@@ -59,7 +69,11 @@ export const App = () => {
       brown_watch,
       white_shirt,
       women_jean,
-      soft_pant
+      soft_pant,
+      pink_pant,
+      shirt_back,
+      jean_jacket,
+      blue_pant
   ]);
 
   return (
@@ -72,6 +86,7 @@ export const App = () => {
         <Route path="/product" element={<Product />}/>
         <Route path="/contact" element={<Contact />}/>
       </Routes>
+      <Footer />
     </Context.Provider>
     </>
   );

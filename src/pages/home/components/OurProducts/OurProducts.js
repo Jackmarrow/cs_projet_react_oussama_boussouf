@@ -21,7 +21,7 @@ export const OurProducts = () => {
                        <div className='d-flex flex-column flex-md-row justify-content-center gap-1'>
                         {
                             productInfo.map((element) => 
-                            element.state == 'New' ?
+                            element.state == 'Best Seller' ?
                             <Item name={element.name} price={element.price} imageSrc={element.imageSrc} state={element.state} />
                             : null
                             )
