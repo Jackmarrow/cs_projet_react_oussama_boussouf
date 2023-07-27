@@ -1,12 +1,12 @@
 @import "../../node_modules/bootstrap/scss/functions";
 @import "../../node_modules/bootstrap/scss/variables";
 
-$light-green: #66a8a6;
+$light-blue: #66a8a6;
 $light-gray: #a6a7a6;
 $light-orange: #e65540;
 
 $custom-colors: (
-  "light-green": $light-green,
+  "light-blue": $light-blue,
   "light-gray": $light-gray,
   "light-orange": $light-orange
 );
@@ -26,8 +26,11 @@ $custom-spacers: (
   7: $spacer * 7,
   8: $spacer * 8,
   //------------------
-  10: $spacer * 0.5,
-  11: $spacer * 0.8,
+
+  10: $spacer * 0.1,
+  11: $spacer * 0.4,
+  12: $spacer * 0.5,
+  13: $spacer * 0.8,
 );
 
 $spacers: map-merge($spacers, $custom-spacers);
