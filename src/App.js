@@ -25,6 +25,7 @@ import pinkPant from './assets/images/pink-pant.jpg';
 import shirtBack from './assets/images/bg-shirt.jpg';
 import jeanJacket from './assets/images/jean-jacket.jpg';
 import blueJeanPant from './assets/images/blue-jean.jpg';
+import leaderJacket from './assets/images/leader-jacket.jpg';
 
 
 export const Context = createContext();
@@ -57,12 +58,13 @@ export const App = () => {
   const shirt_back = new Item('Soft White Shirt', '23', shirtBack, 'men', 'Best Seller');
   const jean_jacket = new Item('Jean Jacket', '23', jeanJacket, 'men', 'Best Seller');
   const blue_pant = new Item('Blue Jean', '23', blueJeanPant, 'women', 'Best Seller');
+  const leader_jacket = new Item('Leader Jacket', '23', leaderJacket, 'men', 'Old');
 
   const [tabProduct, setTabProduct] = useState([
-    glass,
-     blackBasket,
-     hand_watch,
-     jean_shirt,
+      glass,
+      blackBasket,
+      hand_watch,
+      jean_shirt,
       black_shirt,
       white_basket,
       class_shirt,
@@ -73,7 +75,8 @@ export const App = () => {
       pink_pant,
       shirt_back,
       jean_jacket,
-      blue_pant
+      blue_pant,
+      leader_jacket
   ]);
 
   return (

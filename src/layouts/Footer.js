@@ -16,8 +16,8 @@ export const Footer = () => {
   return (
     <footer className="footer-section py-5 bg-body-tertiary">
       <div className="d-flex justify-content-center mb-7">
-        <div className="wrapper d-flex justify-content-between">
-          <div className="text-center get-in-touch">
+        <div className="wrapper d-flex flex-column flex-md-row justify-content-between">
+          <div className=" get-in-touch text-center mb-5 mb-sm-0">
             <h6 className="fw-bold mb-2">GET IN TOUCH</h6>
             <p className="mb-1">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga modi
@@ -43,14 +43,14 @@ export const Footer = () => {
               <BiLogoYoutube style={{ fontSize: "1.2rem" }} className="mx-11" />
             </div>
           </div>
-          <div className="text-center links">
+          <div className="links text-center mb-5 mb-sm-0">
             <h6 className="fw-bold mb-2">LINKS</h6>
             <p className="mb-1">Search</p>
             <p className="mb-1">About Us</p>
             <p className="mb-1">Contact Us</p>
             <p>Returns</p>
           </div>
-          <div className="text-center links">
+          <div className="links text-center">
             <h6 className="fw-bold mb-2">LINKS</h6>
             <p className="mb-1">Search</p>
             <p className="mb-1">About Us</p>

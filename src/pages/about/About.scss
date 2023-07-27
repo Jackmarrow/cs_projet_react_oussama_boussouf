@@ -1,0 +1,29 @@
+.about-section{
+    .distorted-background{
+        height: 40vh;
+        background-image: url('../../assets/images/distorted-background.jpg');
+        background-position: top;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: rgba(0, 0, 0, 0.5);
+        background-blend-mode: darken;
+    }
+
+    .description{
+        width: 85vw;
+        max-width: 1200px;
+        .shirt-hanging{
+            width: 100%;
+            object-fit: cover;
+            @media (min-width: 769px) {
+                width: 35%;
+            }
+        }
+        .quote{
+            border-left: 3px solid lightgray;
+            .writer{
+                font-size: .9rem;
+            }
+        }
+    }
+}

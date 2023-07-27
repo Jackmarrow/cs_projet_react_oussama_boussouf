@@ -16,7 +16,7 @@ export const ComingProduct = () => {
                 images.map((element)=>
                     <div className='position-relative'>
                         <img className='product-image' src={element} alt="product" />
-                        <button className='position-absolute shadow bottom-0 start-50 translate-middle px-2 py-10 border-0'> COMING SOON</button>
+                        <button className='position-absolute shadow bottom-0 start-50 translate-middle px-2 py-13 border-0'> COMING SOON</button>
                     </div>
                 )
             }

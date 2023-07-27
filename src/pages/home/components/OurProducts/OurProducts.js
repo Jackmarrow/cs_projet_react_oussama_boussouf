@@ -18,7 +18,7 @@ export const OurProducts = () => {
                 </div>
                 <div className="tab-content" id="v-pills-tabContent">
                     <div className="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab" tabindex="0">
-                       <div className='d-flex flex-column flex-md-row justify-content-center gap-1'>
+                       <div className='grid-system'>
                         {
                             productInfo.map((element) => 
                             element.state == 'Best Seller' ?
@@ -29,7 +29,7 @@ export const OurProducts = () => {
                        </div>
                     </div>
                     <div className="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab" tabindex="0">
-                        <div className='d-flex flex-column flex-md-row justify-content-center gap-1'>
+                        <div className='grid-system'>
                         {
                             productInfo.map((element) => 
                             element.state == 'New' ?
@@ -40,7 +40,7 @@ export const OurProducts = () => {
                         </div>
                     </div>
                     <div className="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab" tabindex="0">
-                        <div className='d-flex flex-column flex-md-row justify-content-center gap-1'>
+                        <div className='grid-system'>
                         {
                             productInfo.map((element) => 
                             element.state == 'Sale' ?
@@ -51,7 +51,7 @@ export const OurProducts = () => {
                         </div>
                     </div>
                     <div className="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab" tabindex="0">
-                       <div className='d-flex flex-column flex-md-row justify-content-center gap-1'>
+                       <div className='grid-system'>
                        {
                             productInfo.map((element) => 
                             element.state == 'Old' ?
