@@ -1,7 +1,12 @@
 @import '../styles/variables';
 
 .product {
-    max-width: 250px;
+
+    width: 100%;
+
+    @media (min-width: 426px ) {
+        max-width: 250px;
+    }
     
     .image-container{
         position: relative;

@@ -1,0 +1,39 @@
+.product-section{
+    .distorted-background{
+        height: 40vh;
+        background-image: url('../../assets/images/distorted-background.jpg');
+        background-position: top;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: rgba(0, 0, 0, 0.5);
+        background-blend-mode: darken;
+
+        h2{
+            font-size: 3rem;
+        }
+    }
+
+    .btn-categorie{
+        .active{
+            color: black !important;
+        }
+    }
+
+    .all-products{
+        .grid-system{
+            display: grid;
+            row-gap: 2rem;
+
+            @media ((min-width: 426px) and (max-width: 769px)) {
+                grid-template-columns: repeat(2, 1fr);
+                column-gap: 1.5rem;
+            }
+
+            @media (min-width: 770px) {
+                grid-template-columns: repeat(3, 1fr);
+                column-gap: 1.5rem;
+                row-gap: 3rem;
+            }
+    }
+}
+}

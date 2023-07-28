@@ -43,14 +43,14 @@ export const App = () => {
     }
   }
 
-  const glass = new Item('Black Glasses', '23', blackGlasses, 'accessories', 'New');
+  const glass = new Item('Black Glasses', '23', blackGlasses, 'accessoire', 'New');
   const blackBasket = new Item('Black Basket', '23', basket, 'men', 'Old');
-  const hand_watch = new Item('Watch', '23', watch, 'accessories', 'Sale');
+  const hand_watch = new Item('Watch', '23', watch, 'accessoire', 'Sale');
   const jean_shirt = new Item('Jean Shirt', '23', shirt, 'women', 'Sale');
   const black_shirt = new Item('Soft Balck Shirt', '23', blackShirt, 'men', 'New');
   const white_basket = new Item('White Basket', '23', whiteBasket, 'women', 'New');
   const class_shirt = new Item('Class shirt', '23', classShirt, 'men', 'Sale');
-  const brown_watch = new Item('Brown Watch', '23', brownWatch, 'men', 'Old');
+  const brown_watch = new Item('Brown Watch', '23', brownWatch, 'accessoire', 'Old');
   const white_shirt = new Item('Soft White Shirt', '23', whiteShirt, 'men', 'New');
   const women_jean = new Item('Jean Pant', '23', womenJean, 'women', 'Old');
   const soft_pant = new Item('Soft Pant', '23', softPant, 'men', 'Sale');
