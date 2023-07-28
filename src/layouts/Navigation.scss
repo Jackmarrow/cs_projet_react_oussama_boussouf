@@ -1,20 +1,27 @@
-@import '../styles/variables';
+@import "../styles/variables";
 
-.nav-bar{
-    height: 8rem;
-    background-color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+.nav-bar {
+  height: 8rem;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
 
-    ul{
-        a{
-            text-decoration: none;
-            color: black;
-        }
-
-        .active{
-            color: red;
-        }
+  ul {
+    a {
+      text-decoration: none;
+      color: black;
     }
+
+    .active {
+      color: red;
+    }
+  }
+
+  .linedividel {
+    width: 1px;
+    background-color: gray;
+    height: 23px;
+  }
 }

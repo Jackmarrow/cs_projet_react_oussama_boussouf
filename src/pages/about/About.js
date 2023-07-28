@@ -6,7 +6,7 @@ export const About = () => {
   return (
     <section className="about-section">
       <div className="distorted-background d-flex justify-content-center align-items-center">
-        <h2 className="text-white fw-bold fs-1">ABOUT</h2>
+        <h2 className="text-white fw-bold">ABOUT</h2>
       </div>
       <div className="d-flex justify-content-center py-4">
         <div className="description d-flex flex-column flex-lg-row gap-2">
