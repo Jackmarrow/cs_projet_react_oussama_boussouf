@@ -1,0 +1,26 @@
+.contact-section{
+    .distorted-background{
+        height: 40vh;
+        background-image: url('../../assets/images/distorted-background.jpg');
+        background-position: top;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: rgba(0, 0, 0, 0.5);
+        background-blend-mode: darken;
+    }
+
+    .map{
+        width: 100%;
+
+        @media (min-width: 769px) {
+            width: 40%;
+            height: 100%;
+        }
+    }
+
+    .form{
+        @media (min-width: 769px) {
+            width: 45%;
+        }
+    }
+}
