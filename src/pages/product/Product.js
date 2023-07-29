@@ -38,7 +38,7 @@ useEffect(()=>{
     }, [hasChanged])
 
   return (
-    <section className="product-section">
+    <section className="product-section pt-8">
       <div className="distorted-background d-flex flex-column justify-content-center align-items-center">
         <h2 className="text-white fw-bold">PRODUCT</h2>
         <p className="text-white fs-5">New Arrivals Women Collection</p>

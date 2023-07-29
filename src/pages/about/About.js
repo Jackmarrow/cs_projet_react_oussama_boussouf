@@ -4,7 +4,7 @@ import shirtHanging from "../../assets/images/shirt-hanging.jpg";
 
 export const About = () => {
   return (
-    <section className="about-section">
+    <section className="about-section pt-8">
       <div className="distorted-background d-flex justify-content-center align-items-center">
         <h2 className="text-white fw-bold">ABOUT</h2>
       </div>

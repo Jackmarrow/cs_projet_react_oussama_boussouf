@@ -2,7 +2,7 @@ import "./Contact.scss";
 
 export const Contact = () => {
   return (
-    <section className="contact-section">
+    <section className="contact-section pt-8">
       <div className="distorted-background d-flex justify-content-center align-items-center">
         <h2 className="text-white fw-bold">CONTACT</h2>
       </div>

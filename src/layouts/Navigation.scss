@@ -6,9 +6,21 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
 
-  ul {
+  .links {
+    display: none;
+
+    @media (min-width: 768px) {
+      display: block;
+      background-color: transparent;
+      position: unset;
+    }
+
     a {
       text-decoration: none;
       color: black;
@@ -24,4 +36,12 @@
     background-color: gray;
     height: 23px;
   }
+}
+
+.visibleNav{
+  position: fixed;
+  top: 8rem;
+  left: 0;
+  right: 0;
+  background-color: lightgray;
 }
