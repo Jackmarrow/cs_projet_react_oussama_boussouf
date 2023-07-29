@@ -1,6 +1,6 @@
 @import './styles/variables';
-@import './styles/fonts';
 @import '../node_modules/bootstrap/scss/bootstrap.scss';
+@import './styles/fonts';
 
 
 *{
@@ -11,5 +11,8 @@
 
 body{
     font-family: 'Montserrat';
-    height: 200vh;
+}
+
+svg{
+    pointer-events: none;
 }

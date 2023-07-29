@@ -20,7 +20,11 @@ export const Item = (props) => {
         <div className="overlay"></div>
       </div>
       <p className="mb-10">{props.name}</p>
-      <p className="price">${props.price}</p>
+      {
+        props.state == 'Sale' ?
+        <p className="price"><del className="me-11">${props.price}</del> <span className="text-danger">${props.price - ((props.price * 20) / 100)}</span></p>
+        : <p className="price">${props.price}</p>
+      }
     </div>
   );
 };

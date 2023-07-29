@@ -46,18 +46,18 @@ export const App = () => {
   const glass = new Item('Black Glasses', '23', blackGlasses, 'accessoire', 'New');
   const blackBasket = new Item('Black Basket', '23', basket, 'men', 'Old');
   const hand_watch = new Item('Watch', '23', watch, 'accessoire', 'Sale');
-  const jean_shirt = new Item('Jean Shirt', '23', shirt, 'women', 'Sale');
+  const jean_shirt = new Item('Jean Shirt', '21.95', shirt, 'women', 'Sale');
   const black_shirt = new Item('Soft Balck Shirt', '23', blackShirt, 'men', 'New');
   const white_basket = new Item('White Basket', '23', whiteBasket, 'women', 'New');
-  const class_shirt = new Item('Class shirt', '23', classShirt, 'men', 'Sale');
+  const class_shirt = new Item('Class Shirt', '23', classShirt, 'men', 'Sale');
   const brown_watch = new Item('Brown Watch', '23', brownWatch, 'accessoire', 'Old');
   const white_shirt = new Item('Soft White Shirt', '23', whiteShirt, 'men', 'New');
   const women_jean = new Item('Jean Pant', '23', womenJean, 'women', 'Old');
   const soft_pant = new Item('Soft Pant', '23', softPant, 'men', 'Sale');
-  const pink_pant = new Item('Soft Pink Pant', '23', pinkPant, 'women', 'Best Seller');
-  const shirt_back = new Item('Soft White Shirt', '23', shirtBack, 'men', 'Best Seller');
-  const jean_jacket = new Item('Jean Jacket', '23', jeanJacket, 'men', 'Best Seller');
-  const blue_pant = new Item('Blue Jean', '23', blueJeanPant, 'women', 'Best Seller');
+  const pink_pant = new Item('Soft Pink Pant', '23', pinkPant, 'women', null);
+  const shirt_back = new Item('Soft White Shirt', '23', shirtBack, 'men', null);
+  const jean_jacket = new Item('Jean Jacket', '23', jeanJacket, 'men', null);
+  const blue_pant = new Item('Blue Jean', '23', blueJeanPant, 'women', null);
   const leader_jacket = new Item('Leader Jacket', '23', leaderJacket, 'men', 'Old');
 
   const [tabProduct, setTabProduct] = useState([

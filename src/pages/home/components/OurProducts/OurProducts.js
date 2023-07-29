@@ -21,7 +21,7 @@ export const OurProducts = () => {
                        <div className='grid-system'>
                         {
                             productInfo.map((element) => 
-                            element.state == 'Best Seller' ?
+                            element.state == null ?
                             <Item name={element.name} price={element.price} imageSrc={element.imageSrc} state={element.state} />
                             : null
                             )
