@@ -22,7 +22,7 @@ export const Item = (props) => {
       <p className="mb-10">{props.name}</p>
       {
         props.state == 'Sale' ?
-        <p className="price"><del className="me-11">${props.price}</del> <span className="text-danger">${props.price - ((props.price * 20) / 100)}</span></p>
+        <p className="price"><del className="me-11">${props.price}</del> <span className="text-danger">${props.price - (props.price * 0.2)}</span></p>
         : <p className="price">${props.price}</p>
       }
     </div>

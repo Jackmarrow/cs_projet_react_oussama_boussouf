@@ -15,14 +15,14 @@ export const Navigation = () => {
     }
 
     return (
-        <nav className="nav-bar px-2 pb-2">
+        <nav className="nav-bar shadow px-2 pb-2">
             <img src={logo} alt="logo" />
-            <ul className={showNav ? 'visibleNav links d-flex flex-column' : 'links'}>
-            <NavLink onClick={displayNav} data-toggle="collapse" data-target="#navbarCollapse" className="m-1"  to={"/"}>Home</NavLink>
-            <NavLink onClick={displayNav} data-toggle="collapse" data-target="#navbarCollapse" className="m-1"  to={"/product"}>Product</NavLink>
-            <NavLink onClick={displayNav} data-toggle="collapse" data-target="#navbarCollapse" className="m-1"  to={"/about"}>About</NavLink>
-            <NavLink onClick={displayNav} data-toggle="collapse" data-target="#navbarCollapse" className="m-1"  to={"/contact"}>Contact</NavLink>
-            </ul>
+            <motion.ul className={showNav ? 'visibleNav links d-flex flex-column mb-0' : 'd-none links mb-0'}>
+                <NavLink onClick={displayNav} data-toggle="collapse" data-target="#navbarCollapse" className="m-1"  to={"/"}>Home</NavLink>
+                <NavLink onClick={displayNav} data-toggle="collapse" data-target="#navbarCollapse" className="m-1"  to={"/product"}>Product</NavLink>
+                <NavLink onClick={displayNav} data-toggle="collapse" data-target="#navbarCollapse" className="m-1"  to={"/about"}>About</NavLink>
+                <NavLink onClick={displayNav} data-toggle="collapse" data-target="#navbarCollapse" className="m-1"  to={"/contact"}>Contact</NavLink>
+            </motion.ul>
             <div className="d-flex align-items-center">
                 <button className="border-0 bg-transparent"> <AiOutlineHeart style={{height: '1.5rem', width: '1.5rem'}}/></button>
                 <span className="linedividel mx-2 d-none d-md-block"></span>

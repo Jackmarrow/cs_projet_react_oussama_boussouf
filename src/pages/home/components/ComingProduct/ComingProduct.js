@@ -5,7 +5,6 @@ import watch from '../../../../assets/images/watch.jpg';
 import bag from '../../../../assets/images/bag.jpg';
 
 
-
 export const ComingProduct = () => {
 
     const images = [glasses, watch, bag];
