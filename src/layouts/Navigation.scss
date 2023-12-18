@@ -36,6 +36,20 @@
     background-color: gray;
     height: 23px;
   }
+
+  .basket-preview{
+    position: absolute;
+    right: 2%;
+    top: 100%;
+    z-index: 2;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 350px;
+    max-width: 400px;
+    .items-container{
+      max-height: 250px;
+      overflow-y: scroll;
+    }
+  }
 }
 
 .visibleNav{

@@ -11,20 +11,21 @@ export const Product = () => {
   const [inputValue, setInputValue] = useState('');
   const [hasChanged, setHasChanged] = useState(false);
    
+  console.log(filteredProduct);
   const showProducts = (event)=>{
       setInputValue(event.target.value);
       if(inputValue.length == 1 || inputValue.length == 0){
-          setFilteredProduct(products);
+          setFilteredProduct(products.tabProduct);
       }
   }
 
  const searchForProduct = (event)=>{
         if(event.key === 'Enter'){
-            const filter = products.filter((product) => product.name.toLowerCase().includes(inputValue));
+            const filter = products.tabProduct.filter((product) => product.name.toLowerCase().includes(inputValue));
             setFilteredProduct(filter);
         }
         else if(event.target.tagName == 'BUTTON'){
-            const filter = products.filter((product) => product.name.toLowerCase().includes(inputValue));
+            const filter = products.tabProduct.filter((product) => product.name.toLowerCase().includes(inputValue));
             setFilteredProduct(filter);
         }
     }
@@ -34,7 +35,7 @@ export const Product = () => {
  }  
 
 useEffect(()=>{
-        setFilteredProduct(products);
+        setFilteredProduct(products.tabProduct);
     }, [hasChanged])
 
   return (
@@ -64,7 +65,7 @@ useEffect(()=>{
                     <div className="grid-system">
                     {filteredProduct.length != 0 ? 
                         filteredProduct.map((element) => 
-                        <Item name={element.name} price={element.price} imageSrc={element.imageSrc} state={element.state} />):
+                        <Item name={element.name} price={element.price} imageSrc={element.imageSrc} state={element.state} amount={element.amount} />):
                         <h3>No matche has been found</h3>
                     }
                     </div>
@@ -74,7 +75,7 @@ useEffect(()=>{
                         { filteredProduct.length != 0?
                             filteredProduct.map((element) => {
                                 if(element.type == 'women'){
-                                    return <Item name={element.name} price={element.price} imageSrc={element.imageSrc} state={element.state} />
+                                    return <Item name={element.name} price={element.price} imageSrc={element.imageSrc} state={element.state} amount={element.amount} />
                                 }
                             }) : <h3>No matche has been found</h3>
                         }
@@ -85,7 +86,7 @@ useEffect(()=>{
                     { filteredProduct.length != 0?
                             filteredProduct.map((element) => {
                                 if(element.type == 'men'){
-                                    return <Item name={element.name} price={element.price} imageSrc={element.imageSrc} state={element.state} />
+                                    return <Item name={element.name} price={element.price} imageSrc={element.imageSrc} state={element.state} amount={element.amount} />
                                 }
                             }) : <h3>No matche has been found</h3>
                         }
@@ -96,7 +97,7 @@ useEffect(()=>{
                     { filteredProduct.length != 0?
                             filteredProduct.map((element) => {
                                 if(element.type == 'accessoire'){
-                                    return <Item name={element.name} price={element.price} imageSrc={element.imageSrc} state={element.state} />
+                                    return <Item name={element.name} price={element.price} imageSrc={element.imageSrc} state={element.state} amount={element.amount} />
                                 }
                             }) : <h3>No matche has been found</h3>
                         }

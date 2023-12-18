@@ -1,0 +1,27 @@
+.panier-section{
+    .distorted-background{
+        height: 40vh;
+        background-image: url('../../assets/images/distorted-background.jpg');
+        background-position: top;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: rgba(0, 0, 0, 0.5);
+        background-blend-mode: darken;
+
+        h2{
+            font-size: 3rem;
+        }
+    }
+
+    .product-table{
+        width: 80vw;
+        max-width: 1000px;
+    .product-details{
+            img{
+                width: 120px;
+                height: 150px;
+                object-fit: cover;
+            }
+        }
+    }
+}
