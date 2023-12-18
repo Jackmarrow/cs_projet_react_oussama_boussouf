@@ -20,7 +20,7 @@ export const OurProducts = () => {
                     <div className="tab-pane fade show active" id="v-pills-best-seller" role="tabpanel" aria-labelledby="v-pills-best-seller-tab" tabindex="0">
                        <div className='grid-system'>
                         {
-                            productInfo.map((element) => 
+                            productInfo.tabProduct.map((element) => 
                             element.state == null ?
                             <Item name={element.name} price={element.price} imageSrc={element.imageSrc} state={element.state} />
                             : null
@@ -31,7 +31,7 @@ export const OurProducts = () => {
                     <div className="tab-pane fade" id="v-pills-new" role="tabpanel" aria-labelledby="v-pills-new-tab" tabindex="0">
                         <div className='grid-system'>
                         {
-                            productInfo.map((element) => 
+                            productInfo.tabProduct.map((element) => 
                             element.state == 'New' ?
                             <Item name={element.name} price={element.price} imageSrc={element.imageSrc} state={element.state} />
                             : null
@@ -42,7 +42,7 @@ export const OurProducts = () => {
                     <div className="tab-pane fade" id="v-pills-sale" role="tabpanel" aria-labelledby="v-pills-sale-tab" tabindex="0">
                         <div className='grid-system'>
                         {
-                            productInfo.map((element) => 
+                            productInfo.tabProduct.map((element) => 
                             element.state == 'Sale' ?
                             <Item name={element.name} price={element.price} imageSrc={element.imageSrc} state={element.state} />
                             : null
@@ -53,7 +53,7 @@ export const OurProducts = () => {
                     <div className="tab-pane fade" id="v-pills-old" role="tabpanel" aria-labelledby="v-pills-old-tab" tabindex="0">
                        <div className='grid-system'>
                        {
-                            productInfo.map((element) => 
+                            productInfo.tabProduct.map((element) => 
                             element.state == 'Old' ?
                             <Item name={element.name} price={element.price} imageSrc={element.imageSrc} state={element.state} />
                             : null

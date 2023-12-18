@@ -5,6 +5,8 @@ import { Home } from "./pages/home/Home";
 import { About } from "./pages/about/About";
 import { Navigation } from "./layouts/Navigation";
 import { Product } from "./pages/product/Product";
+import { ProductDetails } from "./pages/productDetails/ProductDetails";
+import {Panier} from "./pages/panier/Panier";
 import { Contact } from "./pages/contact/Contact";
 import {Cart} from "./pages/cart/Cart.js";
 import { Footer } from "./layouts/Footer";
@@ -35,32 +37,32 @@ export const App = () => {
 
 
   class Item {
-    constructor(name, price, imageSrc, type, state, quantity) {
+    constructor(name, price, imageSrc, type, state, amount) {
       this.name = name;
       this.price = price;
       this.imageSrc = imageSrc;
       this.type = type;
       this.state = state;
-      this.quantity = quantity;
+      this.amount = amount;
     }
   }
 
-  const glass = new Item('Black Glasses', '23', blackGlasses, 'accessoire', 'New', 1);
-  const blackBasket = new Item('Black Basket', '23', basket, 'men', 'Old', 1);
-  const hand_watch = new Item('Watch', '23', watch, 'accessoire', 'Sale', 1);
-  const jean_shirt = new Item('Jean Shirt', '21.95', shirt, 'women', 'Sale', 1);
-  const black_shirt = new Item('Soft Balck Shirt', '23', blackShirt, 'men', 'New', 1);
-  const white_basket = new Item('White Basket', '23', whiteBasket, 'women', 'New', 1);
-  const class_shirt = new Item('Class Shirt', '23', classShirt, 'men', 'Sale', 1);
-  const brown_watch = new Item('Brown Watch', '23', brownWatch, 'accessoire', 'Old', 1);
-  const white_shirt = new Item('Soft White Shirt', '23', whiteShirt, 'men', 'New', 1);
-  const women_jean = new Item('Jean Pant', '23', womenJean, 'women', 'Old', 1);
-  const soft_pant = new Item('Soft Pant', '23', softPant, 'men', 'Sale', 1);
-  const pink_pant = new Item('Soft Pink Pant', '23', pinkPant, 'women', null, 1);
-  const shirt_back = new Item('Soft White Shirt', '23', shirtBack, 'men', null, 1);
-  const jean_jacket = new Item('Jean Jacket', '23', jeanJacket, 'men', null, 1);
-  const blue_pant = new Item('Blue Jean', '23', blueJeanPant, 'women', null, 1);
-  const leader_jacket = new Item('Leader Jacket', '23', leaderJacket, 'men', 'Old', 1);
+  const glass = new Item('Black Glasses', 23, blackGlasses, 'accessoire', 'New', 1);
+  const blackBasket = new Item('Black Basket', 23, basket, 'men', 'Old', 1);
+  const hand_watch = new Item('Watch', 23, watch, 'accessoire', 'Sale', 1);
+  const jean_shirt = new Item('Jean Shirt', 21.95, shirt, 'women', 'Sale', 1);
+  const black_shirt = new Item('Soft Balck Shirt', 23, blackShirt, 'men', 'New', 1);
+  const white_basket = new Item('White Basket', 23, whiteBasket, 'women', 'New', 1);
+  const class_shirt = new Item('Class Shirt', 23, classShirt, 'men', 'Sale', 1);
+  const brown_watch = new Item('Brown Watch', 23, brownWatch, 'accessoire', 'Old', 1);
+  const white_shirt = new Item('Soft White Shirt', 23, whiteShirt, 'men', 'New', 1);
+  const women_jean = new Item('Jean Pant', 23, womenJean, 'women', 'Old', 1);
+  const soft_pant = new Item('Soft Pant', 23, softPant, 'men', 'Sale', 1);
+  const pink_pant = new Item('Soft Pink Pant', 23, pinkPant, 'women', null, 1);
+  const shirt_back = new Item('Soft White Shirt', 23, shirtBack, 'men', null, 1);
+  const jean_jacket = new Item('Jean Jacket', 23, jeanJacket, 'men', null, 1);
+  const blue_pant = new Item('Blue Jean', 23, blueJeanPant, 'women', null, 1);
+  const leader_jacket = new Item('Leader Jacket', 23, leaderJacket, 'men', 'Old', 1);
 
   const [tabProduct, setTabProduct] = useState([
       glass,
@@ -106,7 +108,8 @@ export const App = () => {
         <Route path="/about" element={<About />} />
         <Route path="/product" element={<Product/>}/>
         <Route path="/contact" element={<Contact />}/>
-        <Route path="/cart" element={<Cart cart={cart}/>}/>
+        <Route path="/panier" element={<Panier/>} />
+        <Route path="/product/:id" element={<ProductDetails/>}/>
       </Routes>
       <Footer />
     </Context.Provider>

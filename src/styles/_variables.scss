@@ -4,11 +4,13 @@
 $light-blue: #66a8a6;
 $light-gray: #a6a7a6;
 $light-orange: #e65540;
+$secondary-gray: #e6e6e6;
 
 $custom-colors: (
   "light-blue": $light-blue,
   "light-gray": $light-gray,
-  "light-orange": $light-orange
+  "light-orange": $light-orange,
+  "secondary-gray": $secondary-gray
 );
 
 $theme-colors: map-merge($theme-colors, $custom-colors);
