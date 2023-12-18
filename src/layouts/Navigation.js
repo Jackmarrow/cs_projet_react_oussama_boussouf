@@ -6,7 +6,7 @@ import {FiMenu} from 'react-icons/fi';
 import { useState } from "react";
 import {motion} from 'framer-motion';
 
-export const Navigation = () => {
+export const Navigation = ({cart}) => {
     
     const [showNav, setShowNav] = useState(false);
 
@@ -26,7 +26,16 @@ export const Navigation = () => {
             <div className="d-flex align-items-center">
                 <button className="border-0 bg-transparent"> <AiOutlineHeart style={{height: '1.5rem', width: '1.5rem'}}/></button>
                 <span className="linedividel mx-2 d-none d-md-block"></span>
-                <button className="border-0 bg-transparent mx-1 mx-md-0"> <AiOutlineShopping style={{height: '2rem', width: '2rem', color: 'gray'}}/> </button>
+                <NavLink to={"/cart"}>
+                    <button className="border-0 bg-transparent mx-1 mx-md-0 position-relative"> 
+                        <AiOutlineShopping style={{height: '2rem', width: '2rem', color: 'gray'}}/> 
+                        {
+                            cart.length != 0 ? 
+                            <div className="bg-danger px-11 py-10 rounded-circle text-white position-absolute top-0 start-50 fs-8">{cart.length}</div>
+                            : null
+                        }
+                    </button>
+                </NavLink>
                 <button onClick={displayNav} className={showNav ? "d-none" : "border-0 bg-transparent d-md-none"}> <FiMenu style={{fontSize: '1.8rem'}} /></button>
                 <button onClick={displayNav} className={showNav ? "border-0 d-block bg-transparent d-md-none" : "d-none"}> <AiOutlineClose style={{fontSize: '1.8rem'}} /> </button>
             </div>

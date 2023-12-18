@@ -4,7 +4,7 @@ import { useContext } from 'react';
 import { Context } from '../../../../App';
 
 export const OurProducts = () => {
-    const productInfo = useContext(Context);
+    const {tabProduct:productInfo} = useContext(Context);
 
     return (
         <section className="our-products mb-8">

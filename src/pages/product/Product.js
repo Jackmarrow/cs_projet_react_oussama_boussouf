@@ -4,9 +4,9 @@ import {BiSearch} from 'react-icons/bi'
 import { Context } from "../../App";
 import { Item } from "../../layouts/Item";
 
-export const Product = () => {
+export const Product = ({onAdd}) => {
 
-  const products = useContext(Context);
+  const {tabProduct: products} = useContext(Context);
   const [filteredProduct, setFilteredProduct] = useState([]);
   const [inputValue, setInputValue] = useState('');
   const [hasChanged, setHasChanged] = useState(false);
@@ -64,7 +64,7 @@ useEffect(()=>{
                     <div className="grid-system">
                     {filteredProduct.length != 0 ? 
                         filteredProduct.map((element) => 
-                        <Item name={element.name} price={element.price} imageSrc={element.imageSrc} state={element.state} />):
+                        <Item name={element.name} price={element.price} imageSrc={element.imageSrc} state={element.state} quantity={element.quantity} />):
                         <h3>No matche has been found</h3>
                     }
                     </div>
@@ -74,7 +74,7 @@ useEffect(()=>{
                         { filteredProduct.length != 0?
                             filteredProduct.map((element) => {
                                 if(element.type == 'women'){
-                                    return <Item name={element.name} price={element.price} imageSrc={element.imageSrc} state={element.state} />
+                                    return <Item name={element.name} price={element.price} imageSrc={element.imageSrc} state={element.state} quantity={element.quantity} />
                                 }
                             }) : <h3>No matche has been found</h3>
                         }
@@ -85,7 +85,7 @@ useEffect(()=>{
                     { filteredProduct.length != 0?
                             filteredProduct.map((element) => {
                                 if(element.type == 'men'){
-                                    return <Item name={element.name} price={element.price} imageSrc={element.imageSrc} state={element.state} />
+                                    return <Item name={element.name} price={element.price} imageSrc={element.imageSrc} state={element.state} quantity={element.quantity} />
                                 }
                             }) : <h3>No matche has been found</h3>
                         }
@@ -96,7 +96,7 @@ useEffect(()=>{
                     { filteredProduct.length != 0?
                             filteredProduct.map((element) => {
                                 if(element.type == 'accessoire'){
-                                    return <Item name={element.name} price={element.price} imageSrc={element.imageSrc} state={element.state} />
+                                    return <Item name={element.name} price={element.price} imageSrc={element.imageSrc} state={element.state} quantity={element.quantity} />
                                 }
                             }) : <h3>No matche has been found</h3>
                         }
