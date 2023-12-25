@@ -1,7 +1,9 @@
-.panier-section{
+@import '../../styles/variables';
+
+.cart-section{
     .distorted-background{
         height: 40vh;
-        background-image: url('../../assets/images/distorted-background.jpg');
+        background-image: url('../../assets/images/clothes-image/distorted-background.jpg');
         background-position: top;
         background-repeat: no-repeat;
         background-size: cover;
@@ -13,15 +15,34 @@
         }
     }
 
-    .product-table{
-        width: 80vw;
-        max-width: 1000px;
-    .product-details{
-            img{
-                width: 120px;
-                height: 150px;
-                object-fit: cover;
+    .table-container{
+        overflow-x: auto;
+
+        .table-wrapper{
+            min-width: 500px;
+
+            .product-quantity{
+                height: 40px;
+                button:active{
+                    background-color: $light-orange !important;
+                }
+        
+                .items-number{
+                    text-align: center;
+                    width: 40px;
+                    outline: none;
+                    &::-webkit-outer-spin-button,
+                    &::-webkit-inner-spin-button{
+                        -webkit-appearance: none;
+                }
+            }
             }
         }
+
+        
+    }
+
+    .order-summary{
+       max-width: 400px;
     }
 }

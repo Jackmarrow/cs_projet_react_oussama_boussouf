@@ -3,17 +3,12 @@ import { Link } from "react-router-dom";
 import {AiOutlineHeart} from 'react-icons/ai';
 import {Context} from '../App';
 import { useContext } from "react";
+import { motion } from "framer-motion";
 
 
 export const Item = (props) => {
 
-  const products = useContext(Context);
-
-  const addProduct = ()=> {
-    const newList = [...products.productInBasket];
-    newList.push(props);
-    products.setProductInBasket(newList);
-  }
+  const {addProduct} = useContext(Context);
 
   return (
     <div className="product">
@@ -25,11 +20,10 @@ export const Item = (props) => {
           <span className="state px-12 rounded-pill bg-success">{props.state}</span>
           : <span className="state px-12 rounded-pill bg-light-orange">{props.state}</span>
         }
-        <button className="heart-icon z-1 border-0 bg-transparent"> <AiOutlineHeart style={{fontSize: '1.5rem'}} /> </button>
         <Link to={`/product/${props.name}`}>
           <img className="product-image" src={props.imageSrc} alt="product" />
         </Link>
-        <button onClick={addProduct} className="btn-cta border-0 rounded-pill bg-black text-white px-1 py-12 position-absolute bottom-0 start-50 translate-middle z-1">ADD TO CART</button>
+        <motion.button whileHover={{scale: 1.5}} onClick={()=> addProduct(props)} className="btn-cta border-0 rounded-pill bg-black text-white px-1 py-12 position-absolute bottom-0 start-50 translate-middle z-1">ADD TO CART</motion.button>
         <div className="overlay pe-none"></div>
       </div>
       <p className="mb-10">{props.name}</p>

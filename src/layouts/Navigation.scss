@@ -3,9 +3,9 @@
 .nav-bar {
   height: 8rem;
   background-color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+  // display: flex;
+  // justify-content: space-between;
+  // align-items: flex-end;
   position: fixed;
   top: 0;
   left: 0;
@@ -31,23 +31,17 @@
     }
   }
 
-  .linedividel {
-    width: 1px;
-    background-color: gray;
-    height: 23px;
-  }
-
   .basket-preview{
     position: absolute;
     right: 2%;
     top: 100%;
     z-index: 2;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    width: 350px;
+    width: 90vw;
     max-width: 400px;
     .items-container{
       max-height: 250px;
-      overflow-y: scroll;
+      overflow-y: auto;
     }
   }
 }

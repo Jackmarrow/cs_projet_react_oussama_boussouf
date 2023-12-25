@@ -3,7 +3,7 @@
 .product-section{
     .distorted-background{
         height: 40vh;
-        background-image: url('../../assets/images/distorted-background.jpg');
+        background-image: url('../../assets/images/clothes-image/distorted-background.jpg');
         background-position: top;
         background-repeat: no-repeat;
         background-size: cover;
@@ -22,28 +22,29 @@
     }
 
     .product-container{
-        
+        width: 90vw;
         .search-icon:hover{
             color: $light-orange;
         }
-
         .all-products{
-            width: 70vw; 
+            width: 100%; 
             max-width: 800px;
             .grid-system{
                 display: grid;
+                justify-items: center;
                 row-gap: 2rem;
+
                 h3{
                     grid-column-start: 1;
                     grid-column-end: 4;
                 }
     
-                @media ((min-width: 426px) and (max-width: 769px)) {
+                @media ((min-width: 426px) and (max-width: 1024px)) {
                     grid-template-columns: repeat(2, 1fr);
                     column-gap: 1.5rem;
                 }
     
-                @media (min-width: 770px) {
+                @media (min-width: 1025px) {
                     grid-template-columns: repeat(3, 1fr);
                     column-gap: 1.5rem;
                     row-gap: 3rem;

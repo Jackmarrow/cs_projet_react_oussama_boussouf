@@ -1,11 +1,10 @@
 @import '../styles/variables';
 
 .product {
-
     width: 100%;
 
     @media (min-width: 426px ) {
-        max-width: 250px;
+        // max-width: 250px;
     }
     
     .image-container{
@@ -37,23 +36,28 @@
             object-fit: cover;
         }
         
-        &:hover .overlay {
-            position: absolute; 
-            left: 0;
-            top: 0;
-            bottom: 0;
-            right: 0;
-            background-color: rgba(0, 0, 0, 0.5);
-        }
-
         .btn-cta{
             width: max-content;
             font-size: .9rem;
-            display: none;
         }
 
-        &:hover .btn-cta{
-            display: block;
+        @media (min-width: 1025px) {
+            &:hover .overlay {
+                position: absolute; 
+                left: 0;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                background-color: rgba(0, 0, 0, 0.5);
+            }
+    
+            .btn-cta{
+                display: none;
+            }
+    
+            &:hover .btn-cta{
+                display: block;
+            }
         }
     }
 }

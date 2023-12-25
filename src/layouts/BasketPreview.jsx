@@ -7,7 +7,7 @@ export const BasketPreview = (props) => {
             <img src={props.imageSrc} alt="" />
             <div>
                 <p className="mb-13"> {props.name} </p>
-                <p className="mb-0 price">1 x $ {props.price}</p>
+                <p className="mb-0 price">{props.amount} x $ {props.price}</p>
             </div>
         </div>
     );

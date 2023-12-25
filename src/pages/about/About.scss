@@ -1,7 +1,7 @@
 .about-section{
     .distorted-background{
         height: 40vh;
-        background-image: url('../../assets/images/distorted-background.jpg');
+        background-image: url('../../assets/images/clothes-image/distorted-background.jpg');
         background-position: top;
         background-repeat: no-repeat;
         background-size: cover;
@@ -18,9 +18,10 @@
         max-width: 1200px;
         .shirt-hanging{
             width: 100%;
-            object-fit: cover;
-            @media (min-width: 769px) {
+            height: 400px;
+            @media (min-width: 992px) {
                 width: 35%;
+                height: 100%;
             }
         }
         .quote{

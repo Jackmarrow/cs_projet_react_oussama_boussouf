@@ -4,28 +4,28 @@ import {BiSearch} from 'react-icons/bi'
 import { Context } from "../../App";
 import { Item } from "../../layouts/Item";
 
-export const Product = ({onAdd}) => {
-
+export const Product = () => {
   const {tabProduct: products} = useContext(Context);
+
   const [filteredProduct, setFilteredProduct] = useState([]);
   const [inputValue, setInputValue] = useState('');
   const [hasChanged, setHasChanged] = useState(false);
    
-  console.log(filteredProduct);
+
   const showProducts = (event)=>{
       setInputValue(event.target.value);
       if(inputValue.length == 1 || inputValue.length == 0){
-          setFilteredProduct(products.tabProduct);
+          setFilteredProduct(products);
       }
   }
 
  const searchForProduct = (event)=>{
         if(event.key === 'Enter'){
-            const filter = products.tabProduct.filter((product) => product.name.toLowerCase().includes(inputValue));
+            const filter = products.filter((product) => product.name.toLowerCase().includes(inputValue));
             setFilteredProduct(filter);
         }
         else if(event.target.tagName == 'BUTTON'){
-            const filter = products.tabProduct.filter((product) => product.name.toLowerCase().includes(inputValue));
+            const filter = products.filter((product) => product.name.toLowerCase().includes(inputValue));
             setFilteredProduct(filter);
         }
     }
@@ -35,7 +35,7 @@ export const Product = ({onAdd}) => {
  }  
 
 useEffect(()=>{
-        setFilteredProduct(products.tabProduct);
+        setFilteredProduct(products);
     }, [hasChanged])
 
   return (
@@ -44,8 +44,8 @@ useEffect(()=>{
         <h2 className="text-white fw-bold">PRODUCT</h2>
         <p className="text-white fs-5">New Arrivals Women Collection</p>
       </div>
-        <div className="product-container py-3 d-flex justify-content-center">
-        <div className="d-flex flex-column px-md-1 px-lg-0 flex-md-row">
+        
+        <div className="product-container d-flex flex-column flex-md-row justify-content-lg-center py-3 mx-auto">
             <div className="nav flex-column nav-pills mb-3 me-md-2" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                 <h4 className="fw-bold mb-1 fs-5">Categories</h4>
                 <div className="btn-categorie mb-3">
@@ -105,7 +105,6 @@ useEffect(()=>{
                 </div>
             </div>
          </div>
-        </div>
     </section>
   );
 };

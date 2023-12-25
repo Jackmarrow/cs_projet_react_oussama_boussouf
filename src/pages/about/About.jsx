@@ -1,8 +1,9 @@
 import React from "react";
 import "./About.scss";
-import shirtHanging from "../../assets/images/shirt-hanging.jpg";
+import shirtHanging from "../../assets/images/clothes-image/shirt-hanging.jpg";
 
 export const About = () => {
+
   return (
     <section className="about-section pt-8">
       <div className="distorted-background d-flex justify-content-center align-items-center">
@@ -10,7 +11,7 @@ export const About = () => {
       </div>
       <div className="d-flex justify-content-center py-4">
         <div className="description d-flex flex-column flex-lg-row gap-2">
-          <img className="shirt-hanging" src={shirtHanging} alt="" />
+          <img className="shirt-hanging object-fit-cover" src={shirtHanging} alt="" />
           <div className="pt-1 pb-lg-5">
             <h2 className="fs-2 mb-1">Our story</h2>
             <p className="text-secondary mb-2">
