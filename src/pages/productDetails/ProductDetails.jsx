@@ -22,7 +22,6 @@ export const ProductDetails = () => {
 
       const sendToCart = (product)=>{
         const updatedProduct = {...product, amount: productAmount};
-        console.log(updatedProduct);
         addProduct(updatedProduct);
       }
 

@@ -12,6 +12,7 @@ import { Contact } from "./pages/contact/Contact.jsx";
 import { Footer } from "./layouts/Footer.jsx";
 // LIST OF ALL PRODUCT
 import { tabProduct } from "./constants/constant.js";
+import { cartReducer } from "./reducer/cartReducer.js";
 //STYLE
 import './App.scss';
 
@@ -21,9 +22,8 @@ export const Context = createContext();
 
 export const App = () => {
 
-  const [cart, setCart] = useState([]);
-
-  // const [cart, dispatch] = useReducer(cartReducer, []);
+  // const [cart, setCart] = useState([]);
+  const [cart, dispatch] = useReducer(cartReducer, []);
   
   //CALC TOTAL PRICE
   const calcTotalPrice = ()=>{
@@ -32,40 +32,41 @@ export const App = () => {
   
   //ADD PRODUCT TO BASKET
   const addProduct = (product)=> {
-    let itExist = false;
-    for (let i = 0; i < cart.length; i++) {
-      const cartElement = cart[i];
-      if(cartElement.name === product.name){
-         setCart( (prevEle) =>{
-          const updatedProduct = [...prevEle];
-          if(product.amount === 1){
-            updatedProduct[i] = {...updatedProduct[i], amount: updatedProduct[i].amount + 1 };
-          } else{
-            updatedProduct[i] = {...updatedProduct[i], amount: product.amount };
-          }
-          return updatedProduct;
-         });
+    dispatch({type:"addProduct", product: product});
+    // let itExist = false;
+    // for (let i = 0; i < cart.length; i++) {
+    //   const cartElement = cart[i];
+    //   if(cartElement.name === product.name){
+    //      setCart( (prevEle) =>{
+    //       const updatedProduct = [...prevEle];
+    //       if(product.amount === 1){
+    //         updatedProduct[i] = {...updatedProduct[i], amount: updatedProduct[i].amount + 1 };
+    //       } else{
+    //         updatedProduct[i] = {...updatedProduct[i], amount: product.amount };
+    //       }
+    //       return updatedProduct;
+    //      });
 
-         itExist = true;
-      }
-    }
+    //      itExist = true;
+    //   }
+    // }
 
-    if(!itExist){
-      setCart([...cart, product])
-    }
+    // if(!itExist){
+    //   setCart([...cart, product])
+    // }
   };
 
   return (
     <>
-    <Context.Provider value={{tabProduct, addProduct}}>
-      <Navigation cart={cart} calcTotalPrice={calcTotalPrice} />
+    <Context.Provider value={{tabProduct, cart, addProduct, dispatch, calcTotalPrice}}>
+      <Navigation />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/product" element={<Product/>}/>
         <Route path="/contact" element={<Contact />}/>
-        <Route path="/panier" element={<Panier cart={cart} setCart={setCart} calcTotalPrice={calcTotalPrice}/>} />
-        <Route path="/product/:id" element={<ProductDetails cart={cart} />}/>
+        <Route path="/panier" element={<Panier/>} />
+        <Route path="/product/:id" element={<ProductDetails/>}/>
       </Routes>
       <Footer />
     </Context.Provider>

@@ -4,12 +4,14 @@ import { NavLink, Link, useLocation} from "react-router-dom";
 import {AiOutlineShopping, AiOutlineClose} from 'react-icons/ai';
 import {FiMenu} from 'react-icons/fi';
 import { BasketPreview } from "./BasketPreview";
-import { useEffect, useState} from "react";
+import { useContext, useEffect, useState} from "react";
+import { Context } from '../App';
 import { motion } from 'framer-motion';
 import './Navigation.scss';
 
-export const Navigation = ({cart, calcTotalPrice}) => {
+export const Navigation = () => {
     
+    const {cart, calcTotalPrice} = useContext(Context);
     const [isOpen, setIsOpen] = useState(false);
     const [showBasket, setShowBasket] = useState(false);
     const {pathname} = useLocation();
@@ -19,10 +21,6 @@ export const Navigation = ({cart, calcTotalPrice}) => {
             setShowBasket(false);
     },[pathname]);
     
-    // const calcTotalPrice = ()=>{
-    //     return cart.reduce((accumulator, currentValue) => accumulator + (currentValue.amount * currentValue.price), 0);
-    // }  
-
     const itemsInBasket = ()=>{
         return cart.reduce((accumulator, currentValue) => accumulator + currentValue.amount, 0);
     }

@@ -1,30 +1,22 @@
 import "./Panier.scss";
-// import shirt from '../../assets/images/black-shirt.jpg';
+
 import basketImage from '../../assets/images/empty-basket.svg';
-import { useState } from "react";
+import { Context } from "../../App";
+import { useContext} from "react";
 
-export const Panier = ({cart, setCart, calcTotalPrice}) => {
+const shippingFee = 15;
 
-  const shippingFee = 15;
+export const Panier = () => {
+  
+
+  const {cart, calcTotalPrice, dispatch} = useContext(Context);
 
   const increment = (index) => {
-    setCart((cart) =>{
-      const newCart = [...cart];
-      newCart[index] = {...newCart[index], amount: newCart[index].amount + 1 };
-      return newCart;
-     });
+    dispatch({type: 'increment', id: index});
   };
 
   const decrement = (index) => {
-    setCart((prevEle) =>{
-      const newCart = [...prevEle];
-      if(newCart[index].amount === 1){
-        const updatedCart = newCart.filter((ele, i) => i !== index && ele);
-        return updatedCart;
-      }
-      newCart[index] = {...newCart[index], amount: newCart[index].amount - 1 };
-      return newCart;
-     });
+     dispatch({type: 'decrement', id: index});
   };
 
   return (
