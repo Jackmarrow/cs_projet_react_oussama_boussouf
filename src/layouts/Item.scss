@@ -2,10 +2,6 @@
 
 .product {
     width: 100%;
-
-    @media (min-width: 426px ) {
-        // max-width: 250px;
-    }
     
     .image-container{
         position: relative;
@@ -39,6 +35,10 @@
         .btn-cta{
             width: max-content;
             font-size: .9rem;
+
+            &:active{
+                background-color: $light-orange !important;
+            }
         }
 
         @media (min-width: 1025px) {

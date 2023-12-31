@@ -1,6 +1,7 @@
 import "./Panier.scss";
 
 import basketImage from '../../assets/images/empty-basket.svg';
+import { FaTrash } from "react-icons/fa";
 import { Context } from "../../App";
 import { useContext} from "react";
 
@@ -19,6 +20,10 @@ export const Panier = () => {
      dispatch({type: 'decrement', id: index});
   };
 
+  const deleteProduct = (productId)=>{
+    dispatch({type:'deleteProduct', id: productId})
+  };
+
   return (
     <section className="cart-section container px-1 px-sm-0 pt-8">
      {cart.length !== 0 ?  
@@ -32,23 +37,25 @@ export const Panier = () => {
             <th className="pb-1">PRICE</th>
             <th className="pb-1">QUANTITY</th>
             <th className="pb-1">TOTAL</th>
+            <th className="pb-1" >DELETE</th>
           </tr>
         </thead>
         <tbody>
             {
                 cart.map((ele, index) => 
-                <tr className="text-center border-1">
+                <tr key={ele.id} className="text-center border-1">
                     <td className="py-1"><img width={120} height={150} src={ele.imageSrc} alt="product image" style={{objectFit: 'cover'}}/></td>
                     <td className="py-1">{ele.name}</td>
                     <td className="py-1">${ele.price}</td>
                     <td className="py-1">
                       <div className='product-quantity d-flex align-items-center justify-content-center'>
                         <button className='px-13 fs-5 h-100 bg-secondary-gray border-0' onClick={() => decrement(index)}>-</button>
-                        <input value={ele.amount} className="items-number h-100 border-0" type="number" />
+                        <input value={ele.amount} readOnly={true} className="items-number h-100 border-0" type="number" />
                         <button className='px-13 fs-5 h-100 bg-secondary-gray border-0' onClick={() => increment(index)}>+</button>
                       </div>
                     </td>
-                    <td className="py-1">${ele.price * ele.amount}</td>
+                    <td className="py-1">${(ele.price * ele.amount).toFixed(2)}</td>
+                    <td><button type="button" className="btn btn-danger p-11" onClick={()=> deleteProduct(ele.id)}><FaTrash style={{color: "#ffffff"}} /></button></td>
                 </tr>)
             }
         </tbody>

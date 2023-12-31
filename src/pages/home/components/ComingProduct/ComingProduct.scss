@@ -8,12 +8,7 @@
         object-fit: cover;
     }
 
-    button{
+    .coming-soon{
         width: max-content;
-        &:hover{
-            cursor: default;
-            background-color: $light-orange;
-            color: white;
-        }
     }
 }

@@ -1,5 +1,7 @@
 import './OurProducts.scss';
+//IMPORT COMPONENT
 import { Item } from '../../../../layouts/Item';
+//IMPORT CONTEXT API AND HOOKS
 import { useContext } from 'react';
 import { Context } from '../../../../App';
 
@@ -16,46 +18,46 @@ export const OurProducts = () => {
                     <button className="tab-btn nav-link bg-transparent text-secondary mx-1 rounded-0" id="v-pills-sale-tab" data-bs-toggle="pill" data-bs-target="#v-pills-sale" type="button" role="tab" aria-controls="v-pills-sale" aria-selected="false">Sale</button>
                     <button className="tab-btn nav-link bg-transparent text-secondary mx-1 rounded-0" id="v-pills-old-tab" data-bs-toggle="pill" data-bs-target="#v-pills-old" type="button" role="tab" aria-controls="v-pills-old" aria-selected="false">Old</button>
                 </div>
-                <div className="tab-content" id="v-pills-tabContent">
-                    <div className="tab-pane fade show active" id="v-pills-best-seller" role="tabpanel" aria-labelledby="v-pills-best-seller-tab" tabindex="0">
+                <div className="tab-content container" id="v-pills-tabContent">
+                    <div className="tab-pane fade show active" id="v-pills-best-seller" role="tabpanel" aria-labelledby="v-pills-best-seller-tab" tabIndex="0">
                        <div className='grid-system'>
                         {
                             productInfo.map((element) => 
                             element.state == null ?
-                            <Item name={element.name} price={element.price} imageSrc={element.imageSrc} state={element.state} amount={element.amount}/>
+                            <Item key={element.id} props={element}/>
                             : null
                             )
                         }
                        </div>
                     </div>
-                    <div className="tab-pane fade" id="v-pills-new" role="tabpanel" aria-labelledby="v-pills-new-tab" tabindex="0">
+                    <div className="tab-pane fade" id="v-pills-new" role="tabpanel" aria-labelledby="v-pills-new-tab" tabIndex="0">
                         <div className='grid-system'>
                         {
                             productInfo.map((element) => 
                             element.state == 'New' ?
-                            <Item name={element.name} price={element.price} imageSrc={element.imageSrc} state={element.state} amount={element.amount} />
+                            <Item key={element.id} props={element} />
                             : null
                             )
                         }
                         </div>
                     </div>
-                    <div className="tab-pane fade" id="v-pills-sale" role="tabpanel" aria-labelledby="v-pills-sale-tab" tabindex="0">
+                    <div className="tab-pane fade" id="v-pills-sale" role="tabpanel" aria-labelledby="v-pills-sale-tab" tabIndex="0">
                         <div className='grid-system'>
                         {
                             productInfo.map((element) => 
                             element.state == 'Sale' ?
-                            <Item name={element.name} price={element.price} imageSrc={element.imageSrc} state={element.state} amount={element.amount} />
+                            <Item key={element.id} props={element} />
                             : null
                             )
                         }
                         </div>
                     </div>
-                    <div className="tab-pane fade" id="v-pills-old" role="tabpanel" aria-labelledby="v-pills-old-tab" tabindex="0">
+                    <div className="tab-pane fade" id="v-pills-old" role="tabpanel" aria-labelledby="v-pills-old-tab" tabIndex="0">
                        <div className='grid-system'>
                        {
                             productInfo.map((element) => 
                             element.state == 'Old' ?
-                            <Item name={element.name} price={element.price} imageSrc={element.imageSrc} state={element.state} amount={element.amount} />
+                            <Item key={element.id} props={element} />
                             : null
                             )
                         }

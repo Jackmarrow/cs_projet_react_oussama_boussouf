@@ -1,4 +1,4 @@
-import React, { createContext, useReducer, useState } from "react";
+import React, { createContext, useEffect, useReducer, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 // IMPORT COMPONENTS
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
@@ -10,8 +10,6 @@ import { ProductDetails } from "./pages/productDetails/ProductDetails.jsx";
 import {Panier} from "./pages/panier/Panier.jsx";
 import { Contact } from "./pages/contact/Contact.jsx";
 import { Footer } from "./layouts/Footer.jsx";
-// LIST OF ALL PRODUCT
-import { tabProduct } from "./constants/constant.js";
 import { cartReducer } from "./reducer/cartReducer.js";
 //STYLE
 import './App.scss';
@@ -22,38 +20,25 @@ export const Context = createContext();
 
 export const App = () => {
 
-  // const [cart, setCart] = useState([]);
   const [cart, dispatch] = useReducer(cartReducer, []);
+
+  const [tabProduct, setTabProduct] = useState([]);
+
+  useEffect(()=>{
+    fetch('/data.json')
+    .then(resp => resp.json())
+    .then(data => setTabProduct(data))
+    .catch(err => console.log(err));
+  },[]);
   
   //CALC TOTAL PRICE
   const calcTotalPrice = ()=>{
-    return cart.reduce((accumulator, currentValue) => accumulator + (currentValue.amount * currentValue.price), 0);
+    return cart.reduce((accumulator, currentValue) => accumulator + (currentValue.amount * currentValue.price), 0).toFixed(2);
   } 
   
   //ADD PRODUCT TO BASKET
   const addProduct = (product)=> {
     dispatch({type:"addProduct", product: product});
-    // let itExist = false;
-    // for (let i = 0; i < cart.length; i++) {
-    //   const cartElement = cart[i];
-    //   if(cartElement.name === product.name){
-    //      setCart( (prevEle) =>{
-    //       const updatedProduct = [...prevEle];
-    //       if(product.amount === 1){
-    //         updatedProduct[i] = {...updatedProduct[i], amount: updatedProduct[i].amount + 1 };
-    //       } else{
-    //         updatedProduct[i] = {...updatedProduct[i], amount: product.amount };
-    //       }
-    //       return updatedProduct;
-    //      });
-
-    //      itExist = true;
-    //   }
-    // }
-
-    // if(!itExist){
-    //   setCart([...cart, product])
-    // }
   };
 
   return (

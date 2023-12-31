@@ -1,0 +1,146 @@
+[
+  {
+    "id": 1,
+    "name": "Black Glasses",
+    "price": 23,
+    "imageSrc": "/images/black-glasses.jpg",
+    "type": "accessory",
+    "state": "New",
+    "amount": 1
+  },
+  {
+    "id": 2,
+    "name": "Black Basket",
+    "price": 23,
+    "imageSrc": "/images/black-basket.jpg",
+    "type": "men",
+    "state": "Old",
+    "amount": 1
+  },
+  {
+    "id": 3,
+    "name": "Watch",
+    "price": 23,
+    "imageSrc": "/images/black-watch.jpg",
+    "type": "accessory",
+    "state": "Sale",
+    "amount": 1
+  },
+  {
+    "id": 4,
+    "name": "Jean Shirt",
+    "price": 21.95,
+    "imageSrc": "/images/shirt.jpg",
+    "type": "women",
+    "state": "Sale",
+    "amount": 1
+  },
+  {
+    "id": 5,
+    "name": "Soft Black Shirt",
+    "price": 23,
+    "imageSrc": "/images/black-shirt.jpg",
+    "type": "men",
+    "state": "New",
+    "amount": 1
+  },
+  {
+    "id": 6,
+    "name": "White Basket",
+    "price": 23,
+    "imageSrc": "/images/white-basket.jpg",
+    "type": "women",
+    "state": "New",
+    "amount": 1
+  },
+  {
+    "id": 7,
+    "name": "Classic Shirt",
+    "price": 23,
+    "imageSrc": "/images/class-shirt.jpg",
+    "type": "men",
+    "state": "Sale",
+    "amount": 1
+  },
+  {
+    "id": 8,
+    "name": "Brown Watch",
+    "price": 23,
+    "imageSrc": "/images/brown-watch.jpg",
+    "type": "accessory",
+    "state": "Old",
+    "amount": 1
+  },
+  {
+    "id": 9,
+    "name": "Soft White Shirt",
+    "price": 23,
+    "imageSrc": "/images/white-shirt.jpg",
+    "type": "men",
+    "state": "New",
+    "amount": 1
+  },
+  {
+    "id": 10,
+    "name": "Jean Pant",
+    "price": 23,
+    "imageSrc": "/images/women-jean.jpg",
+    "type": "women",
+    "state": "Old",
+    "amount": 1
+  },
+  {
+    "id": 11,
+    "name": "Soft Pant",
+    "price": 23,
+    "imageSrc": "/images/male-pant.jpg",
+    "type": "men",
+    "state": "Sale",
+    "amount": 1
+  },
+  {
+    "id": 12,
+    "name": "Soft Pink Pant",
+    "price": 23,
+    "imageSrc": "/images/pink-pant.jpg",
+    "type": "women",
+    "state": null,
+    "amount": 1
+  },
+  {
+    "id": 13,
+    "name": "White Shirt",
+    "price": 23,
+    "imageSrc": "/images/bg-shirt.jpg",
+    "type": "men",
+    "state": null,
+    "amount": 1
+  },
+  {
+    "id": 14,
+    "name": "Jean Jacket",
+    "price": 23,
+    "imageSrc": "/images/jean-jacket.jpg",
+    "type": "men",
+    "state": null,
+    "amount": 1
+  },
+  {
+    "id": 15,
+    "name": "Blue Jean",
+    "price": 23,
+    "imageSrc": "/images/blue-jean.jpg",
+    "type": "women",
+    "state": null,
+    "amount": 1
+  },
+  {
+    "id": 16,
+    "name": "Leader Jacket",
+    "price": 23,
+    "imageSrc": "/images/leader-jacket.jpg",
+    "type": "men",
+    "state": "Old",
+    "amount": 1
+  }
+]

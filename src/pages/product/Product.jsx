@@ -8,10 +8,9 @@ export const Product = () => {
   const {tabProduct: products} = useContext(Context);
 
   const [filteredProduct, setFilteredProduct] = useState([]);
-  const [inputValue, setInputValue] = useState('');
+  const [inputValue, setInputValue] = useState(''); 
   const [hasChanged, setHasChanged] = useState(false);
    
-
   const showProducts = (event)=>{
       setInputValue(event.target.value);
       if(inputValue.length == 1 || inputValue.length == 0){
@@ -19,13 +18,10 @@ export const Product = () => {
       }
   }
 
+ //SEARCH FOR PRODUCTS
  const searchForProduct = (event)=>{
-        if(event.key === 'Enter'){
-            const filter = products.filter((product) => product.name.toLowerCase().includes(inputValue));
-            setFilteredProduct(filter);
-        }
-        else if(event.target.tagName == 'BUTTON'){
-            const filter = products.filter((product) => product.name.toLowerCase().includes(inputValue));
+        if(event.key === 'Enter' || event.target.tagName == 'BUTTON'){
+            const filter = products.filter((product) => product.name.toLowerCase().includes(inputValue.toLocaleLowerCase()));
             setFilteredProduct(filter);
         }
     }
@@ -52,7 +48,7 @@ useEffect(()=>{
                     <button onClick={changeCategorie} className="nav-link text-start bg-transparent rounded-0 text-secondary mb-1 active" id="v-pills-all-tab" data-bs-toggle="pill" data-bs-target="#v-pills-all" type="button" role="tab" aria-controls="v-pills-all" aria-selected="true">All</button>
                     <button onClick={changeCategorie} className="nav-link text-start bg-transparent rounded-0 text-secondary mb-1" id="v-pills-women-tab" data-bs-toggle="pill" data-bs-target="#v-pills-women" type="button" role="tab" aria-controls="v-pills-women" aria-selected="false">Women</button>
                     <button onClick={changeCategorie} className="nav-link text-start bg-transparent rounded-0 text-secondary mb-1" id="v-pills-men-tab" data-bs-toggle="pill" data-bs-target="#v-pills-men" type="button" role="tab" aria-controls="v-pills-men" aria-selected="false">Men</button>
-                    <button onClick={changeCategorie} className="nav-link text-start bg-transparent rounded-0 text-secondary" id="v-pills-accessoire-tab" data-bs-toggle="pill" data-bs-target="#v-pills-accessoire" type="button" role="tab" aria-controls="v-pills-accessoire" aria-selected="false">Accessoire</button>
+                    <button onClick={changeCategorie} className="nav-link text-start bg-transparent rounded-0 text-secondary" id="v-pills-accessoire-tab" data-bs-toggle="pill" data-bs-target="#v-pills-accessoire" type="button" role="tab" aria-controls="v-pills-accessoire" aria-selected="false">Accessory</button>
                 </div>
                  <h4 className="fw-bold mb-2 fs-5">Filter</h4>
                 <div className="position-relative">
@@ -65,7 +61,7 @@ useEffect(()=>{
                     <div className="grid-system">
                     {filteredProduct.length != 0 ? 
                         filteredProduct.map((element) => 
-                        <Item name={element.name} price={element.price} imageSrc={element.imageSrc} state={element.state} amount={element.amount} />):
+                        <Item key={element.id} props={element} />):
                         <h3>No matche has been found</h3>
                     }
                     </div>
@@ -75,7 +71,7 @@ useEffect(()=>{
                         { filteredProduct.length != 0?
                             filteredProduct.map((element) => {
                                 if(element.type == 'women'){
-                                    return <Item name={element.name} price={element.price} imageSrc={element.imageSrc} state={element.state} amount={element.amount} />
+                                    return <Item key={element.id} props={element} />
                                 }
                             }) : <h3>No matche has been found</h3>
                         }
@@ -86,7 +82,7 @@ useEffect(()=>{
                     { filteredProduct.length != 0?
                             filteredProduct.map((element) => {
                                 if(element.type == 'men'){
-                                    return <Item name={element.name} price={element.price} imageSrc={element.imageSrc} state={element.state} amount={element.amount} />
+                                    return <Item key={element.id} props={element} />
                                 }
                             }) : <h3>No matche has been found</h3>
                         }
@@ -96,8 +92,8 @@ useEffect(()=>{
                     <div className="grid-system">
                     { filteredProduct.length != 0?
                             filteredProduct.map((element) => {
-                                if(element.type == 'accessoire'){
-                                    return <Item name={element.name} price={element.price} imageSrc={element.imageSrc} state={element.state} amount={element.amount} />
+                                if(element.type == 'accessory'){
+                                    return <Item key={element.id} props={element} />
                                 }
                             }) : <h3>No matche has been found</h3>
                         }

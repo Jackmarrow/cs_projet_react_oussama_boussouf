@@ -36,7 +36,7 @@ export const ProductDetails = () => {
                             {
                                 currentProduct.state == 'Sale' ? 
                                 <>
-                                <del className="me-11">{currentProduct.price}</del> <span className="text-danger">${currentProduct.price- (currentProduct.price * 0.2)}</span> 
+                                <del className="me-11">{currentProduct.price}</del> <span className="text-danger">${currentProduct.price - (currentProduct.price * 0.2)}</span> 
                                 </>
                                 : <span>{currentProduct.price}</span>
 

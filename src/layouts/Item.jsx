@@ -6,7 +6,7 @@ import { useContext } from "react";
 import { motion } from "framer-motion";
 
 
-export const Item = (props) => {
+export const Item = ({props}) => {
 
   const {addProduct} = useContext(Context);
 
@@ -23,7 +23,7 @@ export const Item = (props) => {
         <Link to={`/product/${props.name}`}>
           <img className="product-image" src={props.imageSrc} alt="product" />
         </Link>
-        <motion.button whileHover={{scale: 1.5}} onClick={()=> addProduct(props)} className="btn-cta border-0 rounded-pill bg-black text-white px-1 py-12 position-absolute bottom-0 start-50 translate-middle z-1">ADD TO CART</motion.button>
+        <motion.button onClick={()=> addProduct(props)} className="btn-cta border-0 rounded-pill bg-black text-white px-1 py-12 position-absolute bottom-0 start-50 translate-middle z-1">ADD TO CART</motion.button>
         <div className="overlay pe-none"></div>
       </div>
       <p className="mb-10">{props.name}</p>

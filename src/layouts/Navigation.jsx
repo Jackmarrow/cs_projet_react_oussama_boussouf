@@ -1,17 +1,22 @@
+//IMPORT IMAGES
 import logo from '../assets/images/logo.png.webp';
 import emptyBasket from '../assets/images/empty-basket.svg';
+//IMPORT REACT HOOKS AND ROUTS
 import { NavLink, Link, useLocation} from "react-router-dom";
-import {AiOutlineShopping, AiOutlineClose} from 'react-icons/ai';
-import {FiMenu} from 'react-icons/fi';
-import { BasketPreview } from "./BasketPreview";
 import { useContext, useEffect, useState} from "react";
 import { Context } from '../App';
+//IMPORT ICONS
+import {AiOutlineShopping, AiOutlineClose} from 'react-icons/ai';
+import {FiMenu} from 'react-icons/fi';
+//IMPORT COMPONENTS
+import { BasketPreview } from "./BasketPreview";
 import { motion } from 'framer-motion';
 import './Navigation.scss';
 
 export const Navigation = () => {
     
     const {cart, calcTotalPrice} = useContext(Context);
+
     const [isOpen, setIsOpen] = useState(false);
     const [showBasket, setShowBasket] = useState(false);
     const {pathname} = useLocation();
@@ -63,7 +68,7 @@ export const Navigation = () => {
                         {
                             cart.length !== 0 ? 
                             cart.map((element) => 
-                                <BasketPreview amount={element.amount} name={element.name} imageSrc={element.imageSrc} price={element.price}/>
+                                <BasketPreview key={element.id} props={element}/>
                             )
                             : <div className='d-flex flex-column align-items-center'>
                                 <img className='mb-1' width="100" src={emptyBasket} alt="empty basket" />
