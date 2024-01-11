@@ -5,7 +5,7 @@ import { FaTrash } from "react-icons/fa";
 import { Context } from "../../App";
 import { useContext} from "react";
 
-const shippingFee = 15;
+const shippingFee = 15.00;
 
 export const Panier = () => {
   

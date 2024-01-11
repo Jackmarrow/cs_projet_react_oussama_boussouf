@@ -33,7 +33,7 @@ export const App = () => {
   
   //CALC TOTAL PRICE
   const calcTotalPrice = ()=>{
-    return cart.reduce((accumulator, currentValue) => accumulator + (currentValue.amount * currentValue.price), 0).toFixed(2);
+    return parseFloat(cart.reduce((accumulator, currentValue) => accumulator + (currentValue.amount * currentValue.price), 0).toFixed(2));
   } 
   
   //ADD PRODUCT TO BASKET
